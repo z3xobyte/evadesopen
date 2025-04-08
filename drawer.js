@@ -151,11 +151,7 @@ function renderArea(area, players, focus, old) {
   const diff = document.getElementById("diff").value;
   const devStat = "Comb Spd: "+ combineSpeed(player) + ", Amount: " + player.safeAmount;
   let offset = 0;
-  if(diff == "Easy"){
-    const deathCounter = (settings.dev) ? "Death Count: " + players[0].deathCounter + ", " + devStat : "Death Count: " + players[0].deathCounter; 
-    context.fillText(deathCounter, 0, 20);
-    context.strokeText(deathCounter, 0, 20);
-  } else if (diff == "Medium"){
+  if(diff == "Medium"){
     const lives = (settings.dev) ? "Lives: " + players[0].lives + ", " + devStat : "Lives: " + players[0].lives;
     let liveColor;
     switch(players[0].lives){
