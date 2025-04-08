@@ -468,7 +468,8 @@ class Player {
 
             this.dirX = Math.round(input.mouse.x - width / 2);
             this.dirY = Math.round(input.mouse.y - height / 2);
-            this.dist = distance(new Vector(0, 0), new Vector(this.dirX, this.dirY));
+            this.dist = Math.sqrt(this.dirX**2 + this.dirY**2);
+
             if (this.dist > this.mouse_distance_full_strength) {
               this.mouseActive = true;
               this.dirX = this.dirX * (this.mouse_distance_full_strength / this.dist);
@@ -480,16 +481,17 @@ class Player {
             }
             this.mouse_angle = Math.atan2(this.dirY,this.dirX);
             this.input_angle = this.mouse_angle;
-            this.mouse_distance = Math.min(this.mouse_distance_full_strength,Math.sqrt(this.dirX**2+this.dirY**2))
-            this.distance_movement*=this.mouse_distance/this.mouse_distance_full_strength;
+            this.mouse_distance = Math.min(this.mouse_distance_full_strength, this.dist);
 
-            this.d_x = this.distance_movement*Math.cos(this.mouse_angle)
-            this.d_y = this.distance_movement*Math.sin(this.mouse_angle)
+            let adjusted_movement = base_movement * (this.mouse_distance / this.mouse_distance_full_strength);
+            this.d_x = adjusted_movement * Math.cos(this.mouse_angle);
+            this.d_y = adjusted_movement * Math.sin(this.mouse_angle);
 
             this.vel.x = this.dirX * this.speed / this.mouse_distance_full_strength;
             this.addX = this.dirX * this.speedAdditioner/this.mouse_distance_full_strength;
             this.addY = this.dirY * this.speedAdditioner/this.mouse_distance_full_strength;
-            if(!this.magnet||this.magnet&&this.safeZone){
+            if(!this.magnet || this.safeZone){
+
               if(this.vertSpeed==-1){
                 this.vel.y = this.dirY * this.speed / this.mouse_distance_full_strength;
               }
