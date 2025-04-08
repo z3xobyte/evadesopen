@@ -199,7 +199,7 @@ enterGame.onclick = function() {
   window.localStorage.hero = document.getElementById("hero").value;
   window.localStorage.hat = document.getElementById("wreath").value;
   switch(document.getElementById("wreath").value){
-    case"Gold":hat.src="https://cdn.glitch.global/9ea89343-3b18-43f9-b04d-c89f6590af5d/gold-wreath.png?v=1704653743278";
+    case"Gold":hat.src="https://media.discordapp.net/attachments/1223018334904258630/1359172468228493332/adofishpasidf.png?ex=67f68380&is=67f53200&hm=12b1d3eecc3071cac9178f18f1a7046eda62ec8b4907237ad6a32b56670a7866&=&format=webp&quality=lossless";
     break;
     case"Spring":hat.src = "https://cdn.glitch.global/9ea89343-3b18-43f9-b04d-c89f6590af5d/spring-wreath.png?v=1704653750134";
     break;
