@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>evades</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div id="menu">
+    <div id="main">
+      <div id="play">
+        <button type="button" name="button" id="connect">Enter game</button><br>
+        <select id='hero'>
+          <option>Normal</option>
+          <option>Magmax</option>
+          <option>Rime</option>
+          <!-- <option>Morfe</option> -->
+          <option>Aurora</option>
+          <option>Necro</option>
+          <option>Brute</option>
+          <option>Shade</option>
+          <option>Chrono</option>
+          <option>Reaper</option>
+          <option>Rameses</option>
+          <option>Cent</option>
+          <option>Jötunn</option>
+          <option>Candy</option>
+          <option>Burst</option>
+          <option>Lantern</option>
+          <option>Pole</option>
+          <option>Polygon</option>
+          <option>Clown</option>
+          <option>Idk</option>
+        </select>
+      </div>
+    </div>
+    <div id='alert'></div>
+    <div id="panel">
+      <div id="interact">
+        <input type="file" id="load" accept="application/x-yaml" name="file">
+      </div>
+      <select id='world'>
+        <option>Original</option>
+        <option>Hard</option>
+        <option>Bruh</option>
+        <option>Custom</option>
+      </select>
+      <select id='diff'>
+        <option>Easy</option>
+        <option>Medium</option>
+        <option>Hard</option>
+      </select>
+      <select id='wreath'>
+        <option>Gold</option>
+        <option>Spring</option>
+        <option>Autumn</option>
+        <option>Winter</option>
+        <option>Summer</option>
+        <option>Halo</option>
+        <option>Santa Hat</option>
+        <option>Blue Santa Hat</option>
+        <option>Stars</option>
+        <option>Flames</option>
+        <option>Blue Flames</option>
+        <option>Orbit Ring</option>
+        <option>Sticky Coat</option>
+        <option>Toxic Coat</option>
+        <option>Gold Crown</option>
+        <option>Silver Crown</option>
+        <option>Bronze Crown</option>
+        <option>Legacy Hat</option>
+        <option>None</option>
+      </select>
+    </div>
+    <div id="name">
+      <input type="text" id="nick" value="Ravelfett">
+    </div>
+    <div id="settings">
+      <div>Settings:</div>
+      <div class="settingsElement">
+        <input type="checkbox" id="mouse_toggle" checked>
+        <label>Mouse Toggle Movement</label>
+        
+        <br><br>
+
+        <label>Mouse Deadzone:</label>
+        <input type="number" id="mouse_deadzone" min="0" max="150" value="2">
+
+        <br class="gamepad"><br class="gamepad">
+
+        <label class="gamepad">Controller Deadzone:</label>
+        <input type="number" id="gamepad_deadzone" min="0" max="8" value="0.06" class="gamepad">
+
+        <br><br>
+
+        <input type="checkbox" id="checkbox" checked>
+        <label>Enemy outline</label>
+
+        <br><br>
+
+        <input type="checkbox" id="sandbox" checked>
+        <label>Sandbox(60FPS)</label>
+
+        <br><br>
+
+        <input type="checkbox" id="timer">
+        <label>Timer</label>
+
+        <br><br>
+
+        <input type="checkbox" id="tiles" checked>
+        <label>Tiles</label>
+
+        <br><br>
+
+        <input type="checkbox" id="no_points">
+        <label>No Points</label>
+
+        <br><br>
+
+        <input type="checkbox" id="dev">
+        <label>Test Mode</label>
+
+        <br><br>
+
+        <input type="checkbox" id="anti_cheat">
+        <label>Disable cheat Buttons</label>
+
+        <br><br>
+
+        <input type="checkbox" id="legacy_speed">
+        <label>Legacy Speed</label>
+
+        <br><br>
+
+        <label>Delay (ms):</label>
+        <input type="number" id="delay_box" min="0" max="3000" value="0">
+
+        <br class="Chrono"><br class="Chrono">
+
+        <label class="Chrono">Death timer (s):</label>
+        <input type="number" id="death_timer" min="3" max="10" value="3" class="Chrono">
+
+        <br class="Chrono"><br class="Chrono">
+
+        <label class="Chrono">9113Guest:</label>
+        <input type="number" id="9113" min="0" max="500" value="0" class="Chrono">
+      </div>
+    </div>
+
+    
+    <button id="infoBtn">Documentation</button>
+    <div id="infoOverlay">
+      <div class="infoContent">
+        <p class="infoHeading" style="padding-bottom: 10px;">Features</p>
+        <p class="infoDoc" style="padding-bottom: 35px;">The 9113 number button allows you to set the chrono "shadow" to
+          any time, the bigger the number the futher back in time chrono will backtrack (same with enemies and rewind)
+        </p>
+
+        <p class="infoTitle">Hotkeys</p>
+        <p class="infoDoc">(H) - Hide hero card</p>
+        <p class="infoDoc">(M or Tab) - Hide minimap</p>
+        <p class="infoDoc">(E) - Go back 1 by area (cheating enabled)</p>
+        <p class="infoDoc">(R) - Go forward by 10 areas (cheating enabled)</p>
+        <p class="infoDoc">(T) - Go forward by 1 area (cheating enabled)</p>
+        <p class="infoDoc">(v) - Invincibility (cheating enabled)</p>
+        <p class="infoDoc">(B) - Removes cooldown on abilities (cheating enabled)</p>
+        <p class="infoDoc">(N) - Activates wall god, where you can now go out of bounds (cheating enabled)</p>
+        <p class="infoDoc">([) - Adds a safe point. Upon death you will respawn at the position that you last pressed [
+          (Test Mode only)</p>
+        <p class="infoDoc">(]) - Removes the most recent safe point (Test Mode only)</p>
+        <p class="infoDoc">(P) - If true and a safe point exists, upon death it will reset the timer (Test Mode only)</p>
+        <p class="infoDoc">(O) - Resets timer (Test Mode only)</p>
+        
+      </div>
+
+      <br><br>
+
+      <div class="infoContent">
+        <p class="infoHeading">Updates</p>
+
+        <p class="infoTitle">07/05/2024</p>
+        <p class="infoDoc"> - Added Necro</p>
+
+        <br><br>
+        
+        <p class="infoTitle">28/02/2024</p>
+        <p class="infoDoc"> - Basic Controller support</p>
+        <p class="infoDoc"> - Mouse Deazone</p>
+        <p class="infoDoc"> - You now do not have to upgrade anything unless no points is on</p>
+        <p class="infoDoc"> - Magmax Harden: 0.5 second cooldown -> 0.25 second cooldown</p>
+        <p class="infoDoc"> - Candy Sugar Rush: Removed speed gain from using sugar rush</p>
+        <p class="infoDoc"> - Candy SweetTooth: For mouse and joystick now places at the same angle</p>
+        <p class="infoDoc"> - Pellet Multiplier actually works (For example oo each oo pellet is 5 times the experience from cc, the wiki is wrong)</p>
+        <p class="infoDoc"> - 0 Points now doesn't show the number 0</p>
+        <p class="infoDoc"> - Upon death, ability cooldowns get reset</p>
+        <p class="infoDoc"> - Upon wipe, you now respawn at the first area rather than central core</p>
+
+        <br><br>
+
+        <p class="infoTitle">23/01/2024</p>
+        <p class="infoDoc"> - This whole popup</p>
+        <p class="infoDoc"> - Added "Vengeance" ability</p>
+        <p class="infoDoc"> - Added Delay</p>
+        <p class="infoDoc"> - Fixed shade "Night" ability</p>
+        <p class="infoDoc"> - Fixed Slippery-Boundary speed</p>
+
+        <br><br>
+
+        <p class="infoTitle">22/01/2024</p>
+        <p class="infoDoc"> - Added Chrono</p>
+
+        <br><br>
+
+        <p class="infoTitle">When Br1h got all of of the original sandbox</p>
+        <p class="infoDoc"> - Hide hero card</p>
+        <p class="infoDoc"> - Hide minimap</p>
+      </div>
+
+      <br><br>
+
+      <div class="infoContent">
+        <p class="infoHeading">Credits</p>
+        
+        <p class="infoTitle">Br1h</p>
+        <p class="infoDoc">Current person who's updating this site, if you find any bugs dm me or @.realityy</p>
+        <p class="infoDoc" style="padding-bottom: 45px;"> - Added Chrono</p>
+
+        <p class="infoTitle">Blood of Gods</p>
+        <p class="infoDoc"> - Fixed Slippery-Boundary speed glitch</p>
+        <p class="infoDoc"> - Fixed Shade's "Night" ability not working</p>
+        <p class="infoDoc"> - Added "Vengeance" ability</p>
+
+        <p class="infoTitle">Ravelfett & DD1</p>
+        <p class="infoDoc" style="padding-bottom: 45px;">Original creators of sandbox, most of the base was made by these people did you know they added
+          delay but never made it an option available to change</p>
+       <!-- <a href="https://pifary-dev.github.io/ravel/" class="infoDoc">Check out their sandbox! It has different features :D</p> -->
+      </div>
+    </div>
+    
+    <script>
+      //Gamepad
+      let gamepadElements = document.getElementsByClassName("gamepad")
+
+      for (let i = 0; i < gamepadElements.length ; i++){
+        gamepadElements[i].hidden = true;
+      }
+
+
+      //Chrono
+      const activateDeathTimer = document.getElementsByClassName("Chrono")
+      const id = setInterval(() => {
+        //const hero = document.getElementById("hero")
+        for (var i = 0; i < activateDeathTimer.length; i++) {
+          if (hero.selectedIndex == 6) {
+            activateDeathTimer[i].hidden = false;
+          }
+          else {
+            activateDeathTimer[i].hidden = true;
+          }
+        }
+
+        if (menu.style.display == "none") {
+          clearInterval(id)
+        }
+      }, 100)
+    </script>
+  </div>
+  <div id="gamed" style="display:none;">
+    <canvas id="game" width="1280" height="720"></canvas>
+  </div>
+  <script src="evades_yaml.js"></script>
+  <script src="maps.js"></script>
+  <script src="vector.js"></script>
+  <script src="utils.js"></script>
+  <script src="entities.js"></script>
+  <script src="game.js"></script>
+  <script src="drawer.js"></script>
+  <script src="main.js"></script>
+  <script src="listeners.js"></script>
+</body>
+
+</html>
